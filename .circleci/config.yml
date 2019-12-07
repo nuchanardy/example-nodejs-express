@@ -28,10 +28,10 @@ jobs:
           name: "Build docker image and push to docker hub"
           command: |
             cp Dockerfile.production Dockerfile
-            docker build -t ima8/example-nodejs-circle:latesr .
-            docker build -t ima8/example-nodejs-circle:$(CIRCLE_SHAI) .
-            docker push ima8/example-nodejs-circle
-            docker push ima8/example-nodejs-circle:$(CIRCLE_SHAI)
+            docker build -t nuchanardy/example-nodejs-circle:latesr .
+            docker build -t nuchanardy/example-nodejs-circle:${CIRCLE_SHAI} .
+            docker push nuchanardy/example-nodejs-circle
+            docker push nuchanardy/example-nodejs-circle:${CIRCLE_SHAI}
       - run: echo Done
   test:
     docker:
