@@ -26,7 +26,7 @@ jobs:
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run:
           name: "Build docker image and push to docker hub"
-          command:
+          command: |
             cp Dockerfile.production Dockerfile
             docker build -t ima8/example-nodejs-circle:latesr .
             docker build -t ima8/example-nodejs-circle:$(CIRCLE_SHAI) .
