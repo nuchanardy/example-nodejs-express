@@ -29,9 +29,9 @@ jobs:
           command: |
             cp Dockerfile.production Dockerfile
             docker build -t nuchanardy/example-nodejs-circle:latesr .
-            docker build -t nuchanardy/example-nodejs-circle:${CIRCLE_SHAI} .
+            docker build -t nuchanardy/example-nodejs-circle:${CIRCLE_SHA1} .
             docker push nuchanardy/example-nodejs-circle
-            docker push nuchanardy/example-nodejs-circle:${CIRCLE_SHAI}
+            docker push nuchanardy/example-nodejs-circle:${CIRCLE_SHA1}
       - run: echo Done
   test:
     docker:
